@@ -1,6 +1,5 @@
 var conf = require('../test/config.js');
 var mongoose = require('mongoose');
-console.log(conf.db_url);
 mongoose.connect(conf.db_url);
 
 /*var db = mongoose.connection;

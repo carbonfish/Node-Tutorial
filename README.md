@@ -1,6 +1,6 @@
 # imooc
 
-im[C[C[m[3~[3~[3~[C[C[C[[C[C[C[C[C[C[C[Csda
+First Node
 
 ## Getting Started
 ### On the server

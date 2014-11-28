@@ -30,6 +30,7 @@ console.log(movies);
 
 
 })
+
  */
 var Movie = require('../models/movie');
 var MovieSchema = require ('../schemas/movieSchema');
@@ -38,6 +39,17 @@ describe("DB connection",function(){
   db.on('error',function(stream){
     console.error("connection error");
    });
+  after(function(){
+    Movie.find ({},function(err,movies){
+      if(err){
+         console.log(err);
+       }
+      movies.forEach(function(movie){
+         Movie.remove(movie);
+      });
+
+    })   
+  });
  it('db connection test',function(done){ 
   var testMovie = new Movie({
     title:'hello world}'});
@@ -45,7 +57,6 @@ describe("DB connection",function(){
     if(err){
       return console.error(err);
     }
-      mongoose.disconnect();
       done();
     })
     Movie.find(function(err,movies){

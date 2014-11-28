@@ -1,3 +1,4 @@
 module.exports = {
-   db_url:  process.env.OPENSHIFT_MONGODB_DB_URL
+   db_url:  process.env.OPENSHIFT_MONGODB_DB_URL,
+   auth:{auth:{authdb:"admin"}}
 };
